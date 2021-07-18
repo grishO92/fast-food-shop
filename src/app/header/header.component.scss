@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--thirdC);
+  padding: 1rem 4rem;
+
+  .navbtns {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  a {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    padding: 0.4rem;
+
+    background-color: var(--thirdC);
+    color: var(--secondC);
+    text-decoration: none;
+    border-radius: 0.4rem;
+  }
+
+  a:hover {
+    background-color: var(--secondC);
+    color: var(--thirdC);
+  }
+}

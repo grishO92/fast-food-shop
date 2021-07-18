@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--textC);
+}
+
+:root {
+  --firstC: rgb(241, 241, 241);
+  --secondC: rgb(93, 20, 220);
+  --thirdC: rgb(255, 255, 255);
+}

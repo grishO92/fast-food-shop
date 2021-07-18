@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  h1 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10.5rem;
+    color: var(--secondC);
+    font-family: "Roboto", sans-serif;
+  }
+
+  img {
+    height: 90vh;
+    border-radius: 0.7rem 0 0 0.7rem;
+  }
+}
