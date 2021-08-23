@@ -1,1 +1,18 @@
-<p>catalog works!</p>
+<div class="catalog">
+    <div class="title">
+        <h1>MENU</h1>
+    </div> 
+    <div class="card-grid" >
+        <div class="card" *ngFor="let food of allFood">
+            <img class="img" src={{food.image}}/>
+            <div class="info">
+                <h2 class="title">{{food.name}}</h2>
+                <div class="buttons">
+                    <a routerLink='/details'>Details</a> 
+                    <a routerLink='/details'>Buy it</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

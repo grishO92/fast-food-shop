@@ -1,8 +1,8 @@
 <div class="wrapper">
     <h2>Login form</h2>
-    <form method="post">
-        <input type="email" name="email" id="email" placeholder="enter Email">
-        <input type="password" name="password" id="password" placeholder="enter Password">
-        <button type="submit">Login</button>
+    <form  #form="ngForm" (ngSubmit)="signIn(form)">
+        <input type="email" name="email" id="email" placeholder="enter Email" ngModel>
+        <input type="password" name="password" id="password" placeholder="enter Password" ngModel>
+        <button>Login</button>
     </form>
 </div>

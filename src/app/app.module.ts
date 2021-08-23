@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,8 +12,15 @@ import { RegisterComponent } from './register/register.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
-import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+
+//firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { AuthenticationService } from './services/auth.service';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -23,20 +32,18 @@ import { AboutComponent } from './about/about.component';
     CatalogComponent,
     CardComponent,
     HomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: 'catalog', component: CatalogComponent },
-      { path: 'card', component: CardComponent },
-      { path: 'about', component: AboutComponent },
-    ]),
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthenticationService, ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

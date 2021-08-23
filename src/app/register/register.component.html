@@ -1,9 +1,9 @@
 <div class="wrapper">
     <h2>Register form</h2>
-    <form  method="post">
-        <input type="email" name="email" id="email" placeholder="enter Email">
-        <input type="password" name="password" id="password" placeholder="enter Password">
-        <input type="password" name="repass" id="repass" placeholder="repeat Password">
-        <button type="submit">Register</button>
+    <form #form="ngForm" (ngSubmit)='signUp(form)'>
+        <input type="text" name="email" id="email" placeholder="enter Email" ngModel>
+        <input type="password" name="password" id="password" placeholder="enter Password" ngModel>
+        <input type="password" name="repass" id="repass" placeholder="repeat Password" ngModel>
+        <button >Register</button>
     </form>
 </div>
