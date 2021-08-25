@@ -9,7 +9,7 @@
                 <h2 class="title">{{food.name}}</h2>
                 <div class="buttons">
                     <a routerLink='/details'>Details</a> 
-                    <a routerLink='/details'>Buy it</a> 
+                    <button (click)='addToCart(food)'>Add to Cart</button> 
                 </div>
             </div>
         </div>

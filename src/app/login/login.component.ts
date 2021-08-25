@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     }
     this.authService.SignIn(
       form.controls.email.value,
-      form.controls.email.value
+      form.controls.password.value
     );
 
     form.reset();

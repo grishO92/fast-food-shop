@@ -6,14 +6,16 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class ApiService {
   constructor(private db: AngularFirestore) {}
-  array: any = [];
+  menu: any = [];
   getAllFood() {
-    return this.db
+    this.db
       .collection('healthy')
       .snapshotChanges()
       .subscribe((res) => {
         res.map((food: any) => {
-          this.array.push(food.payload._delegate.doc.data());
+          if (this.menu.length <= 6) {
+            this.menu.push(food.payload._delegate.doc.data());
+          }
         });
       });
   }

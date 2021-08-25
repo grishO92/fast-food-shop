@@ -5,12 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CatalogComponent } from './catalog/catalog.component';
-import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
@@ -25,12 +25,12 @@ import { ApiService } from './services/api.service';
 @NgModule({
   declarations: [
     AppComponent,
+    CartComponent,
     HeaderComponent,
     FooterComponent,
     LoginComponent,
     RegisterComponent,
     CatalogComponent,
-    CardComponent,
     HomeComponent,
     AboutComponent,
   ],

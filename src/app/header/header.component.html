@@ -1,19 +1,18 @@
 <nav class="wrapper">
-    <a [routerLink]="['/']" class="logo">Virtual Food Truck</a>
+    <a class="logo" routerLink=''>Virtual Food Truck</a>
     <div>
-        <div *ngIf='isUser' class="navbtns">
-           
-            <a [routerLink]="['/catalog']" >Catalog</a>
-            <a [routerLink]="['/about']" >About</a>
-            <a [routerLink]="['/card']" >Card</a>
-            <a [routerLink]="['/']" (click)="signOut()" >Logout</a>
-        </div>
-        <div *ngIf='!isUser'>
-           
-            <a [routerLink]="['/catalog']" >Catalog</a>
-            <a [routerLink]="['/about']" >About</a>
-            <a [routerLink]="['/login']" >Login</a>
-            <a [routerLink]="['/register']" >Register</a>
-        </div>
+        <div *ngIf="authService.userData; then thenBlock else elseBlock" class="navbtns"></div>
+        <ng-template #thenBlock>
+            <a class="btns" routerLink='/catalog' >Catalog</a>
+            <a class="btns" routerLink='/about' >About</a>
+            <a class="btns" routerLink='/cart' >Card {{totalItems}}</a>
+            <a class="btns" (click)="signOut()" >Logout</a>
+        </ng-template>
+        <ng-template #elseBlock >
+            <a class="btns" routerLink='/catalog' >Catalog</a>
+            <a class="btns" routerLink='/about' >About</a>
+            <a class="btns" routerLink='/login' >Login</a>
+            <a class="btns" routerLink='/register' >Register</a>
+        </ng-template>
     </div>
 </nav>

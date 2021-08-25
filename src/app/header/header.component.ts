@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/auth.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +8,20 @@ import { AuthenticationService } from '../services/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private authService: AuthenticationService) {}
-  isUser: boolean = false;
+  constructor(
+    public authService: AuthenticationService,
+    private cart: CartService
+  ) {}
+
+  public totalItems: number = 0;
 
   ngOnInit(): void {
-    this.isUser = true;
+    this.cart.getProducts().subscribe((res: any) => {
+      this.totalItems = res.length;
+    });
   }
 
   signOut() {
     this.authService.SignOut();
-    this.isUser = false;
   }
 }

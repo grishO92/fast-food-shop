@@ -2,28 +2,36 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--thirdC);
-  padding: 1rem 4rem;
+  padding: 0.5rem 0rem;
 
-  .navbtns {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-  }
-
-  a {
-    font-family: "Roboto", sans-serif;
+  .logo {
+    margin: 0 0 0 2rem;
     font-size: 1.6rem;
-    padding: 0.4rem;
-
+    padding: 0.5rem;
+    cursor: pointer;
     background-color: var(--thirdC);
     color: var(--secondC);
     text-decoration: none;
     border-radius: 0.4rem;
+    &:hover {
+      background-color: var(--secondC);
+      color: var(--thirdC);
+    }
   }
-
-  a:hover {
-    background-color: var(--secondC);
-    color: var(--thirdC);
+  .btns {
+    font-size: 1.6rem;
+    padding: 0.4rem;
+    margin: 0 2rem;
+    cursor: pointer;
+    background-color: var(--thirdC);
+    color: var(--secondC);
+    text-decoration: none;
+    border-radius: 0.4rem;
+    &:hover {
+      background-color: var(--secondC);
+      color: var(--thirdC);
+    }
   }
 }
