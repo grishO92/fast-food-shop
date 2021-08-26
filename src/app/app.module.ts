@@ -21,6 +21,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { AuthenticationService } from './services/auth.service';
 import { ApiService } from './services/api.service';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ApiService } from './services/api.service';
     CatalogComponent,
     HomeComponent,
     AboutComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,

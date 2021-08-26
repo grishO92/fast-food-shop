@@ -16,6 +16,7 @@
     align-items: center;
     justify-content: center;
     img {
+      box-shadow: 0px 5px 15px -12px black;
       text-decoration: none;
       border-radius: 0.4rem;
       height: 300px;
@@ -39,21 +40,115 @@
 }
 
 .cart-table {
+  box-shadow: 0px 5px 15px -12px black;
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: none;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.25rem;
-}
+  padding: 2rem;
+  background-color: var(--firstC);
+  border: 1px solid var(--firstC);
+  border-radius: 0.5rem;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
 
-.center .btn {
-  font-size: 14px;
-  margin-top: 20px;
-  font-weight: 400;
-  padding: 12px 72px;
-  border-radius: 3px;
+    padding: 1rem;
+    .item-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      .img-wrapper {
+        overflow: hidden;
+        .img {
+          object-position: center;
+          width: 120px;
+          height: 120px;
+          border-radius: 0.5rem;
+          object-fit: cover;
+        }
+      }
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.22rem;
+        .quantity {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          align-items: center;
+          text-align: center;
+          .btn {
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            border: 0.1rem solid var(--color-one);
+            color: var(--color-one);
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+        .delItem {
+          width: fit-content;
+          cursor: pointer;
+          padding: 0.3rem;
+          font-size: 1.3rem;
+          color: var(--color-two);
+          text-decoration: none;
+          border-radius: 0.4rem;
+          border: 0.1rem solid orangered;
+          background-color: orangered;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+  .btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    .empty-cart {
+      cursor: pointer;
+      padding: 0.4rem;
+      font-size: 1.5rem;
+      color: var(--color-two);
+      text-decoration: none;
+      border-radius: 0.5rem;
+      border: 0.1rem solid crimson;
+      background-color: crimson;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    .shop-more {
+      cursor: pointer;
+      padding: 0.4rem;
+      font-size: 1.5rem;
+      color: var(--color-two);
+      text-decoration: none;
+      border-radius: 0.5rem;
+      border: 0.1rem solid var(--color-one);
+      background-color: var(--color-one);
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    .checkout {
+      cursor: pointer;
+      padding: 0.4rem;
+      font-size: 1.5rem;
+      color: var(--color-two);
+      text-decoration: none;
+      border-radius: 0.5rem;
+      border: 0.1rem solid #26a97c;
+      background-color: #26a97c;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
 }

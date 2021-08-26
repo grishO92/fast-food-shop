@@ -14,10 +14,6 @@ export class CatalogComponent implements OnInit {
   ngOnInit(): void {
     this.api.getAllFood();
     this.allFood = this.api.menu;
-
-    this.allFood.forEach((i: any) => {
-      Object.assign(i, { quantity: 1, total: i.price });
-    });
   }
 
   addToCart(item: any) {

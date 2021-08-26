@@ -1,18 +1,18 @@
 <nav class="wrapper">
-    <a class="logo" routerLink=''>Virtual Food Truck</a>
+    <a class="logo" routerLink=''>БУСЪТ</a>
     <div>
         <div *ngIf="authService.userData; then thenBlock else elseBlock" class="navbtns"></div>
         <ng-template #thenBlock>
-            <a class="btns" routerLink='/catalog' >Catalog</a>
-            <a class="btns" routerLink='/about' >About</a>
-            <a class="btns" routerLink='/cart' >Card {{totalItems}}</a>
-            <a class="btns" (click)="signOut()" >Logout</a>
+            <a class="btns" routerLink='/catalog' >Меню</a>
+            <a class="btns" routerLink='/about' >Относно</a>
+            <a class="btns" routerLink='/cart' >Количка {{totalItems}}</a>
+            <a class="btns" (click)="signOut()" >Изход</a>
         </ng-template>
         <ng-template #elseBlock >
-            <a class="btns" routerLink='/catalog' >Catalog</a>
-            <a class="btns" routerLink='/about' >About</a>
-            <a class="btns" routerLink='/login' >Login</a>
-            <a class="btns" routerLink='/register' >Register</a>
+            <a class="btns" routerLink='/catalog' >Меню</a>
+            <a class="btns" routerLink='/about' >Относно</a>
+            <a class="btns" routerLink='/login' >Вход</a>
+            <a class="btns" routerLink='/register' >Регистрация</a>
         </ng-template>
     </div>
 </nav>

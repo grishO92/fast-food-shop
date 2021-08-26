@@ -8,15 +8,15 @@
 
     h1 {
       font-size: 4rem;
-      color: var(--color-one);
+      color: var(--color-four);
     }
   }
   .card-grid {
     display: grid;
-    margin: 0rem 3rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     gap: 2rem;
-    grid-auto-rows: 300px;
+    grid-auto-rows: 290px;
   }
 }
 
@@ -65,22 +65,39 @@
     .buttons {
       display: flex;
       flex-direction: row;
+      justify-items: center;
+      align-items: center;
       gap: 1rem;
 
       a,
       button {
+        border-style: hidden;
         padding: 0.4rem;
         color: var(--color-two);
         text-decoration: none;
         border-radius: 0.5rem;
-        border: 0.1rem solid var(--color-one);
         background-color: var(--color-one);
+        cursor: pointer;
         &:hover {
           transform: scale(1.1);
         }
+        &:active {
+          background-color: rgb(72, 19, 162);
+        }
       }
       button {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        background-color: #26a97c;
+        &:active {
+          background-color: #197354;
+        }
+      }
+      p {
+        padding: 0.4rem;
+        color: var(--color-one);
+        text-decoration: none;
+        border-radius: 0.5rem;
+        background-color: var(--color-two);
       }
     }
   }

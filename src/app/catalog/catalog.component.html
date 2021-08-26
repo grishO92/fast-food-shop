@@ -1,6 +1,6 @@
 <div class="catalog">
     <div class="title">
-        <h1>MENU</h1>
+        <h1>МЕНЮ</h1>
     </div> 
     <div class="card-grid" >
         <div class="card" *ngFor="let food of allFood">
@@ -8,8 +8,9 @@
             <div class="info">
                 <h2 class="title">{{food.name}}</h2>
                 <div class="buttons">
-                    <a routerLink='/details'>Details</a> 
-                    <button (click)='addToCart(food)'>Add to Cart</button> 
+                    <a routerLink='/details'>Детайли</a> 
+                    <button (click)='addToCart(food)'>Добави в количката</button>
+                    <p>{{food.price}} лв</p> 
                 </div>
             </div>
         </div>
