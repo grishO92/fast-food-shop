@@ -13,6 +13,9 @@ import { RegisterComponent } from './register/register.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { DetailsComponent } from './details/details.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 //firebase
 import { AngularFireModule } from '@angular/fire';
@@ -21,7 +24,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { AuthenticationService } from './services/auth.service';
 import { ApiService } from './services/api.service';
-import { DetailsComponent } from './details/details.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { DetailsComponent } from './details/details.component';
     HomeComponent,
     AboutComponent,
     DetailsComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +48,7 @@ import { DetailsComponent } from './details/details.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FontAwesomeModule,
   ],
   providers: [AuthenticationService, ApiService],
   bootstrap: [AppComponent],

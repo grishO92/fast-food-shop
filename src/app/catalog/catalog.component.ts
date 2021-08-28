@@ -9,11 +9,11 @@ import { CartService } from '../services/cart.service';
 })
 export class CatalogComponent implements OnInit {
   constructor(private api: ApiService, private cart: CartService) {}
-  public allFood: any;
+  menu: any = [];
 
   ngOnInit(): void {
-    this.api.getAllFood();
-    this.allFood = this.api.menu;
+    this.api.getMenu();
+    this.menu = this.api.menu;
   }
 
   addToCart(item: any) {

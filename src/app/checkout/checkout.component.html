@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <h2>Каса</h2>
+   <div class="el-wrapper">
+<form  #form="ngForm" (ngSubmit)="order(form)">
+        <input type="text" name="name" id="name" placeholder="въведете име" ngModel>
+        <input type="text" name="adress" id="adress" placeholder="въведете адрес" ngModel>
+        <input type="text" name="city" id="city" placeholder="въведете град" ngModel>
+        <input type="text" name="country" id="country" placeholder="въведете държава" ngModel>
+        <button>Купи</button>
+    </form>
+    <div class="products">
+    <div *ngFor='let item of products' class="wrapper">
+        <div class="item-wrapper">
+          <div class="img-wrapper"><img class="img" src="{{(item.image)}}"></div>
+          <div class="details">
+          <div><strong>Име на продукт: </strong>{{item.name}}</div>
+          <div><strong>Хранителна стойност: </strong>{{item.calories}} калории</div>
+          <div><strong>Цена: </strong>{{item.price}} лв</div>
+          </div>
+        </div> 
+    </div>
+    <div class="total">
+       <h3><strong>Тотал: {{fTotal.toFixed(2)}} лв</strong></h3>
+       <h3><strong>Калории тотал: {{fKcal}} kcal</strong></h3>
+   </div>
+   </div>
+</div>
+</div>
+

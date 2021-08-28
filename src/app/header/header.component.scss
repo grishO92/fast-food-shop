@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   background-color: var(--thirdC);
   padding: 0.5rem 0rem;
 
@@ -32,6 +33,21 @@
     &:hover {
       background-color: var(--secondC);
       color: var(--thirdC);
+    }
+  }
+  .btns-cart {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--secondC);
+    text-decoration: none;
+    border-radius: 0.4rem;
+    .i {
+      font-size: 1.6rem;
+      margin: 0;
+      background-color: transparent;
     }
   }
 }

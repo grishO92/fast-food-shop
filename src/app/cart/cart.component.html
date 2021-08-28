@@ -1,9 +1,9 @@
 <ng-container *ngIf='products.length != 0'>
     <div class="cart-table">
         <div class="cart-product">
-            <div *ngFor='let item of products; let i = index' class="wrapper">
+            <div *ngFor='let item of products' class="wrapper">
                  <div class="item-wrapper">
-                   <div class="img-wrapper"><img class="img" src="{{item.image}}"></div>
+                   <div class="img-wrapper"><img class="img" src="{{(item.image)}}"></div>
                    <div class="details">
                    <div><strong>Име на продукт: </strong>{{item.name}}</div>
                    <div><strong>Хранителна стойност: </strong>{{item.calories}} калории</div>
@@ -23,7 +23,7 @@
             <div class="btns">
                 <button class="empty-cart" (click)='emptyCart()'>Изпразни количката</button>
                 <a class="shop-more" routerLink='/catalog'>Пазарувай още</a>
-                <a class="checkout" routerLink='/catalog'>Купи</a>
+                <a class="checkout" routerLink='/checkout'>Купи</a>
                 <h3><strong>Тотал: {{fTotal.toFixed(2)}} лв</strong></h3>
                 <h3><strong>Калории тотал: {{fKcal}} kcal</strong></h3>
             </div>

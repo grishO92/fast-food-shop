@@ -19,13 +19,14 @@ export class CartService {
     this.productList.next(product);
   }
   addToCart(product: any) {
-    if (!this.cartItemList.includes(product)) {
+    if (
+      !this.cartItemList.includes(product) &&
+      product.id !== this.cartItemList[0]?.id
+    ) {
       this.cartItemList.push(product);
       this.productList.next(this.cartItemList);
       this.getTotalPrice();
       this.getTotalKcal();
-    } else {
-      this.removeCartItem(product);
     }
   }
 

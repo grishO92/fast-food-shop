@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -30,13 +31,21 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectLoggedInToCatalog },
   },
-  { path: 'catalog', component: CatalogComponent },
   {
-    path: 'details',
-    component: DetailsComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    path: 'catalog',
+    children: [
+      {
+        path: '',
+        component: CatalogComponent,
+      },
+      {
+        path: ':id',
+        component: DetailsComponent,
+        data: { authGuardPipe: redirectUnauthorizedToLogin },
+      },
+    ],
   },
+
   {
     path: 'cart',
     component: CartComponent,
@@ -44,10 +53,18 @@ const routes: Routes = [
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   { path: 'about', component: AboutComponent },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

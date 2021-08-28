@@ -10,9 +10,6 @@ import { AuthenticationService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
   constructor(private authService: AuthenticationService) {}
 
-  // email!: string;
-  // password!: string;
-
   ngOnInit(): void {}
 
   signIn(form: NgForm) {

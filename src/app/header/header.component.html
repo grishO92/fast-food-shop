@@ -5,7 +5,8 @@
         <ng-template #thenBlock>
             <a class="btns" routerLink='/catalog' >Меню</a>
             <a class="btns" routerLink='/about' >Относно</a>
-            <a class="btns" routerLink='/cart' >Количка {{totalItems}}</a>
+            
+            <a routerLink='/cart' class="btns-cart"><fa-icon class="btns-cart i" routerLink='/cart' [icon]="faShoppingCart"></fa-icon>{{totalItems}}</a>
             <a class="btns" (click)="signOut()" >Изход</a>
         </ng-template>
         <ng-template #elseBlock >

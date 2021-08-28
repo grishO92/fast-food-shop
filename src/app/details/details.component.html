@@ -1,1 +1,24 @@
-<p>details works!</p>
+<div class="details">
+    <h2>Details</h2>
+    <div *ngIf='food' class="card">
+      <img class="img" src="{{food.image}}" />
+      <div class="detail-grid">
+        <div class="desc">
+          <div class="title"><span>Име: </span>{{food.name}}</div>
+          <div class="calories"><span>Калории: </span>{{food.calories}} kCal</div>
+          <div class="price"><span>Цена: </span>{{food.price}} лв</div>
+          <div class="recipe">
+            <span >Съставки: </span>
+            <ul *ngFor='let ingredient of food.ingredients'>
+                <li>{{ingredient}}</li>
+            </ul>
+            
+          </div>
+        </div>
+        <div class="btns">
+          <a class="btn back" routerLink='/catalog'>Назад</a>
+          <button (click)="addToCart(food)" class="btn buy">Добави в количката</button>
+        </div>
+      </div>
+    </div>
+  </div>

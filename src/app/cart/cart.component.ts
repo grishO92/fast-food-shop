@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import firebase from 'firebase/app';
+import { ApiService } from '../services/api.service';
+
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -20,19 +23,23 @@ export class CartComponent implements OnInit {
       this.fKcal = this.cart.getTotalKcal();
     });
   }
+
   removeQty(item: any) {
     this.cart.removeQuantity(item);
     this.fTotal = this.cart.getTotalPrice();
     this.fKcal = this.cart.getTotalKcal();
   }
+
   addQty(item: any) {
     this.cart.addQuantity(item);
     this.fTotal = this.cart.getTotalPrice();
     this.fKcal = this.cart.getTotalKcal();
   }
+
   removeItem(item: any) {
     this.cart.removeCartItem(item);
   }
+
   emptyCart() {
     this.cart.removeAllCart();
   }

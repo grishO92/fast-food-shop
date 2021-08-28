@@ -3,12 +3,12 @@
         <h1>МЕНЮ</h1>
     </div> 
     <div class="card-grid" >
-        <div class="card" *ngFor="let food of allFood">
+        <div class="card" *ngFor="let food of menu">
             <img class="img" src={{food.image}}/>
             <div class="info">
                 <h2 class="title">{{food.name}}</h2>
                 <div class="buttons">
-                    <a routerLink='/details'>Детайли</a> 
+                    <a [routerLink]='food.id'>Детайли</a> 
                     <button (click)='addToCart(food)'>Добави в количката</button>
                     <p>{{food.price}} лв</p> 
                 </div>
